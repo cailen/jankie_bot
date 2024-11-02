@@ -1,0 +1,14 @@
+repos:
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.96.1 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+  hooks:
+    - id: terraform_fmt
+    - id: terraform_docs
+    - id: terraform_checkov
+    - id: terraform_tflint
+    - id: infracost_breakdown
+      args:
+        - --args=--path=./
+      verbose: true # Always show costs
+    - id: terraform_validate
+
